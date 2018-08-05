@@ -16,16 +16,17 @@ var PORT = process.env.PORT || 8080;
 // Sets up the express app to handle data parsing.
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(bodyParser.text());
 
 // ========================== Routes ========================== //
 
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+require(path.join(__dirname, "./app/routes/apiRoutes"))(app);
+require(path.join(__dirname, "./app/routes/htmlRoutes"))(app);
 
 // ========================== Listener ========================== //
 
 //Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
   // Starts the server.
-  console.log("App listening on PORT" + PORT);
+  console.log("Friend Finder app listening on PORT" + PORT);
 });
