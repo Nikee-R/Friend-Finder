@@ -4,8 +4,8 @@
 // The score is a reference for the user's compatibility with each other.
 var friendArray = [
     {
-    name: "Mimi",
-    photo: "",
+    name: "Bub",
+    photo: "https://i0.wp.com/makatidogandcathospital.com/wp-content/uploads/2017/04/lil-bub.jpg",
     scores: [
         1,
         4,
@@ -21,16 +21,16 @@ var friendArray = [
 },
 {
     name: "Mimi",
-    photo: "",
+    photo: "https://i.ytimg.com/vi/n7gcats5uCQ/maxresdefault.jpg",
     scores: [
         1,
         4,
-        5,
-        4,
+        3,
+        1,
         2,
-        3,
-        5,
-        3,
+        1,
+        1,
+        1,
         2,
         2
     ]
