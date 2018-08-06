@@ -114,7 +114,7 @@ var friendArray = [
         2,
         2
     ]
-}
+},
 {
     name: "Mimi",
     photo: "",
