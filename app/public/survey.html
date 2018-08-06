@@ -145,7 +145,7 @@
             <img id="matchPic" src="" alt="No Image" width = 250px>
           </div>
         <div class="modal-footer">
-          <a href="#!" class="modal-action modal-close btn btn-lg btn-danger #ff8a80 red accent-1">Done</a>
+          <a href="#!" class="modal-action modal-close btn btn-lg btn-danger #ff8a80 red accent-1">All done!</a>
         </div>
       </div>
     </div>
@@ -154,8 +154,9 @@
 <script type="text/javascript">
 
     //Uploads information to server.
-    $(document).ready(function() {
+    $(document).ready(function(event) {
         $("#submitBtn").on("click", function() {
+            event.preventDefault();
 
             function validateForm() {
             var isValid = true;
@@ -203,7 +204,7 @@
             });
 
             // Show the modal with the best match
-                $('.modal').modal();
+                $('#modal1').modal('open');
 
             // Clears form after completion.
             $('#name').val("");
