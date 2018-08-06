@@ -4,7 +4,7 @@ Friend Finder is a friend match-making application based on survey responses. De
 
 #### Overview
 
-This application is hosted on [Heroku](https://dashboard.heroku.com/apps/limitless-hollows-73078), please check it out!
+This application is hosted on [Heroku](https://www.mysql.com/downloads/), please check it out!
 
 You are also able to run this application locally using [Node](https://nodejs.org/en/) with the following instructions.
 

@@ -20,8 +20,8 @@ app.use(bodyParser.text());
 
 // ========================== Routes ========================== //
 
-require(path.join(__dirname, "./app/routes/apiRoutes"))(app);
-require(path.join(__dirname, "./app/routes/htmlRoutes"))(app);
+require(path.join(__dirname, "./app/routing/apiRoutes"))(app);
+require(path.join(__dirname, "./app/routing/htmlRoutes"))(app);
 
 // ========================== Listener ========================== //
 
