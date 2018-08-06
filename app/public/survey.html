@@ -142,10 +142,10 @@
           <div class="modal-content">
             <h4>You've been matched!</h4>
             <h5 id="matchName"></h5>
-            <img id="matchPic" src="" alt="No Image" width = 250px>
+            <img id="matchPic" width="250" src="">
           </div>
         <div class="modal-footer">
-          <a href="#!" class="modal-action modal-close btn btn-lg btn-danger #ff8a80 red accent-1">All done!</a>
+          <a href="/survey" class="modal-action modal-close waves-effect waves-green btn-flat">All done!</a>
         </div>
       </div>
     </div>
@@ -193,9 +193,10 @@
                 ]
             };
 
-            //Grabs current URL of website
+            // Grabs current URL of website.
             var currentURL = window.location.origin;
-            //AJAX posts the data to friends API.
+
+            // AJAX posts the data to friends API.
             $.post(currentURL + "/api/friends", newFriend, function(data) {
                 //Grab the result from the AJAX post so that the best match's name and photo are displayed.
                 $("#matchName").text(data.name);
@@ -203,7 +204,7 @@
             });
 
             // Show the modal with the best match
-                $('#modal1').modal('open');
+                $('.modal').modal();
 
             // Clears form after completion.
             $('#name').val("");
@@ -218,7 +219,9 @@
             $('#q8').val("");
             $('#q9').val("");
             $('#q10').val("");
+
         } else {
+            
             alert("All fields are required in order to submit.")
         }
     });
