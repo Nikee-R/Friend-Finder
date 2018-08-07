@@ -19,37 +19,37 @@ module.exports = function(app) {
   app.post("/api/friends", function(req, res) {
 
     // Grabs user input.
-    var userInput = req.body;
-
-    // Grabs user responses.
-    var userResponse = userInput.scores;
+    var userInput = req.body.scores;
 
     // Handles the match-making.
-    var friendMatch = "";
-    var friendImage = "";
-    var totalDiff = 0;
+    var scoresArr = [];
+    var friendMatch = 0;
 
     // Runs through friend array.
     for (var i = 0; i < friends.length; i++) {
-
+      
       // Handles the differences between scores.
       var difference = 0;
-      for (var j = 0; j < userResponse.length; j++) {
-        difference += Math.abs(friends[i].scores[j] - userResponse[j]);
+
+      // Compares friends.
+      for (var j = 0; j < userInput.length; j++) {
+        difference += (Math.abs(parseInt(friends[i].scores[j]) - parseInt(userInput[j])));
       }
 
-      // Records the matched friend with the lowest difference in score.
-      if (difference < totalDiff) {
-        totalDiff = difference;
-        friendMatch = friends[i].name;
-        friendImage = friends[i].photo;
-      }
+      // Pushes scores into array.
+      scoresArr.push(difference);
     }
+      // Records the matched friend with the lowest difference in score.
+ for (var i = 0; i < scoresArr.length; i++) {
+  if (scoresArr[i] <= scoresArr[friendMatch]) {
+    friendMatch = i;
+  }
+ }
+// Returns best match.
+var bestMatch = friends[friendMatch];
+res.json(bestMatch);
 
-    // Adds new user.
-    friends.push(userInput);
-
-    // Sends response.
-    res.json({status: "Matched", friendMatch: friendMatch, friendImage: friendImage});
-  });
+ // Pushes new data.
+ friends.push(req.body);
+});
 };

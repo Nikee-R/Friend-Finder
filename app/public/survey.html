@@ -135,7 +135,7 @@
             </div>
         </div>
         <div class='col s4'>
-            <p><a href="/aps">API Friends List</a> | <a href='https://github.com/Nikee-R/Friend-Finder' target='_blank'>GitHub Repo</a></p>
+            <p><a href="/api/friends">API Friends List</a> | <a href='https://github.com/Nikee-R/Friend-Finder' target='_blank'>GitHub Repo</a></p>
         </div>
 
         <div id="modal1" class="modal">
@@ -196,15 +196,15 @@
             // Grabs current URL of website.
             var currentURL = window.location.origin;
 
-            // AJAX posts the data to friends API.
             $.post(currentURL + "/api/friends", userInput, function(data) {
                 //Grab the result from the AJAX post so that the best match's name and photo are displayed.
-                $("#matchName").text(data.name);
-                $("#matchPic").attr("src", data.photo);
+                $("#matchName").text(data.friendMatch);
+                $("#matchPic").attr("src", data.friendImage);
             });
 
             // Show the modal with the best match
                 $('.modal').modal();
+                $("#modal1").modal("open")
 
             // Clears form after completion.
             $('#name').val("");
